@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Alex Mateosyan | Computer Science, AI &amp; Data</title>
+<meta name="description" content="Portfolio of Alex Mateosyan, Computer Science (AI & Data Analytics) student at the University of Dundee.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap">
+<style>
+:root{
+  --bg:#f4efe6; --surface:#fffaf2; --ink:#1d1a16; --muted:#6b6258; --line:#e3dacb;
+  --accent:#9e2f26; --accent-soft:#f3e2da; --warm:#9e2f26;
+  --head:"Fraunces",Georgia,serif; --body:"Inter",system-ui,sans-serif; --mono:"JetBrains Mono",ui-monospace,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 var(--body)}
+a{color:var(--accent)}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:58px;gap:16px}
+nav .logo{font:600 18px var(--head);color:var(--ink);text-decoration:none}
+nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0;overflow-x:auto;min-width:0}
+nav .logo{flex-shrink:0}
+.grid2>div{min-width:0}
+nav a.l{color:var(--muted);text-decoration:none;font-size:14px;font-weight:500;white-space:nowrap}
+nav a.l:hover{color:var(--accent)}
+header.hero{padding:72px 0 56px}
+.eyebrow{font:400 13px var(--mono);color:var(--warm);letter-spacing:.06em;text-transform:uppercase;margin-bottom:12px}
+h1{font:600 clamp(34px,6vw,56px)/1.08 var(--head);margin:0 0 18px;letter-spacing:-.015em}
+.lead{font-size:18px;color:var(--muted);max-width:62ch;margin:0 0 26px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:11px 20px;border-radius:10px;font-weight:600;text-decoration:none;font-size:15px}
+.btn.primary{background:var(--ink);color:var(--bg)}
+.btn.primary:hover{background:var(--accent)}
+.btn.ghost{border:1px solid var(--line);color:var(--ink);background:var(--surface)}
+section{padding:56px 0;border-top:1px solid var(--line)}
+h2{font:600 32px var(--head);margin:0 0 8px;letter-spacing:-.01em}
+.sub{color:var(--muted);margin:0 0 28px}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:8px}
+.fact{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px}
+.fact b{display:block;font:600 15px var(--head);margin-bottom:2px}
+.fact span{color:var(--muted);font-size:14px}
+.projects{display:grid;gap:18px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px 24px}
+.card h3{font:600 20px var(--head);margin:0 0 4px}
+.meta{font:400 13px var(--mono);color:var(--muted);margin-bottom:12px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 14px}
+.tag{background:var(--accent-soft);color:var(--accent);font-size:12.5px;font-weight:600;padding:3px 10px;border-radius:999px}
+.card dl{margin:0;display:grid;gap:8px}
+.card dt{font-weight:600;font-size:14px}
+.card dd{margin:0;color:var(--muted);font-size:15px}
+.status{display:inline-block;font-size:12px;font-weight:600;color:var(--warm);border:1px solid var(--warm);border-radius:999px;padding:1px 8px;margin-left:6px;vertical-align:3px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.skillgroup{margin-bottom:16px}
+.skillgroup h4{margin:0 0 6px;font:600 15px var(--head)}
+pre{background:#1d1a16;color:#efe7da;border-radius:12px;padding:16px;overflow-x:auto;font:13px/1.55 var(--mono);margin:12px 0 0}
+pre .c{color:#a39684}
+.ts{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+.ts li{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.ts b{display:block;font-family:var(--head)}
+.ts span{color:var(--muted);font-size:15px}
+.cvbox{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px}
+.links{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.links a{display:block;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);font-weight:600}
+.links a span{display:block;color:var(--muted);font-weight:400;font-size:14px}
+footer{padding:28px 0 40px;border-top:1px solid var(--line);color:var(--muted);font-size:13.5px}
+@media (max-width:720px){.grid2{grid-template-columns:1fr} nav ul{gap:14px} header.hero{padding:48px 0 40px}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <a class="logo" href="#top">Alex Mateosyan</a>
+  <ul>
+    <li><a class="l" href="#about">About</a></li>
+    <li><a class="l" href="#projects">Projects</a></li>
+    <li><a class="l" href="#skills">Skills</a></li>
+    <li><a class="l" href="#cv">CV</a></li>
+    <li><a class="l" href="#contact">Contact</a></li>
+  </ul>
+</div></nav>
+
+<header class="hero" id="top"><div class="wrap">
+  <div class="eyebrow">Computer Science · AI &amp; Data Analytics</div>
+  <h1>Hi, I'm Alex. I build things with data, backend code and AI.</h1>
+  <p class="lead">I'm a second-year Computer Science student at the University of Dundee, specialising in AI and Data Analytics. I've worked on a real AI system during a backend internship, and I'm aiming for a career in data and AI, starting with a summer 2027 internship.</p>
+  <div class="btns">
+    <a class="btn primary" href="#projects">See my work</a>
+    <a class="btn ghost" href="Alex_Mateosyan_CV.pdf" download>Download CV (PDF)</a>
+  </div>
+</div></header>
+
+<section id="about"><div class="wrap">
+  <h2>About me</h2>
+  <p class="sub">I'm curious, I work hard, and I like taking something messy and making it useful. Outside of code I host a philosophy podcast, run a Dungeons &amp; Dragons campaign, and volunteer at tech events.</p>
+  <div class="facts">
+    <div class="fact"><b>Studying</b><span>BSc Computer Science with AI &amp; Data Analytics, University of Dundee</span></div>
+    <div class="fact"><b>Experience</b><span>Backend Developer &amp; AI Systems Assistant intern, Donau Trucks GmbH</span></div>
+    <div class="fact"><b>Interested in</b><span>Data science, machine learning, backend and AI-system integration</span></div>
+    <div class="fact"><b>Languages</b><span>Bulgarian (native), English (C1)</span></div>
+  </div>
+</div></section>
+
+<section id="projects"><div class="wrap">
+  <h2>Projects</h2>
+  <p class="sub">A mix of industry, university and personal work.</p>
+  <div class="projects">
+
+    <article class="card">
+      <h3>AI Logo-Removal System</h3>
+      <div class="meta">Internship · Donau Trucks GmbH · Aug–Sep 2026</div>
+      <div class="tags"><span class="tag">AI model</span><span class="tag">Data preparation</span><span class="tag">Backend</span><span class="tag">Databases</span></div>
+      <dl>
+        <dt>What it is</dt><dd>An AI model that automatically removes logos from images, used inside the company's systems.</dd>
+        <dt>My role</dt><dd>Prepared and cleaned training data, integrated the model into the backend, and monitored its performance. I also supported server infrastructure, databases and IT across the team.</dd>
+        <dt>Challenges &amp; what I learned</dt><dd>Getting a model to work reliably in a real system takes far more than training it. Data quality, integration and monitoring matter just as much. I also learned to manage my time on a ~54-hour week.</dd>
+      </dl>
+    </article>
+
+    <article class="card">
+      <h3>Chained Hash Table Login System</h3>
+      <div class="meta">University of Dundee · Multi-paradigm Programming · Oct 2026</div>
+      <div class="tags"><span class="tag">C</span><span class="tag">Data structures</span><span class="tag">Memory management</span></div>
+      <dl>
+        <dt>What it is</dt><dd>A command-line login system that stores users in a hash table, using chaining to handle collisions.</dd>
+        <dt>My role</dt><dd>Solo project: designed the data structures and wrote all the code.</dd>
+        <dt>Challenges &amp; what I learned</dt><dd>Managing memory by hand with malloc/free and pointers, coming from a Java background. It taught me how hash tables actually work under the hood and how to avoid leaks.</dd>
+      </dl>
+    </article>
+
+    <article class="card">
+      <h3>AI Tools &amp; Study Quality: Research Project</h3>
+      <div class="meta">International College Dundee · Academic English · 2026</div>
+      <div class="tags"><span class="tag">Survey design</span><span class="tag">Data analysis</span><span class="tag">Research</span><span class="tag">Presenting</span></div>
+      <dl>
+        <dt>What it is</dt><dd>A research report asking: to what extent do AI tools affect the quality of studying among undergraduates?</dd>
+        <dt>My role</dt><dd>Designed the survey, collected and analysed responses from 13 students, combined them with four academic sources, and presented the findings.</dd>
+        <dt>Challenges &amp; what I learned</dt><dd>Drawing honest conclusions from a small dataset, and explaining results clearly to a non-technical audience. I improved it through several drafts based on feedback.</dd>
+      </dl>
+    </article>
+
+    <article class="card">
+      <h3>Zebra MyWiki: Team Website</h3>
+      <div class="meta">International College Dundee · Web Development · 2026</div>
+      <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">GitHub</span><span class="tag">Teamwork</span></div>
+      <dl>
+        <dt>What it is</dt><dd>A five-page informational website about zebras, built by a team of five.</dd>
+        <dt>My role</dt><dd>Wrote all the HTML across the five pages, while teammates handled CSS, JavaScript, GitHub and documentation.</dd>
+        <dt>Challenges &amp; what I learned</dt><dd>Splitting work cleanly in a team and keeping everyone's parts consistent through GitHub.</dd>
+      </dl>
+    </article>
+
+    <article class="card">
+      <h3>AI Speaking Coach <span class="status">In development</span></h3>
+      <div class="meta">Personal project · 2026 – present</div>
+      <div class="tags"><span class="tag">Python</span><span class="tag">Speech-to-text</span><span class="tag">Audio analysis</span><span class="tag">Machine learning</span></div>
+      <dl>
+        <dt>What it is</dt><dd>A web tool that analyses a spoken recording (loudness, clarity, pace and filler words like "um") and gives friendly, timestamped feedback, with one-click fixes and export.</dd>
+        <dt>My role</dt><dd>Solo project: idea, design and build. It started from my own podcast recordings.</dd>
+        <dt>Challenges &amp; what I learned</dt><dd>Planning a realistic scope, and designing a model that learns from user corrections (for example, "like" isn't always a filler word).</dd>
+      </dl>
+    </article>
+
+  </div>
+</div></section>
+
+<section id="skills"><div class="wrap">
+  <h2>Skills</h2>
+  <p class="sub">Technical skills I've used in real work, and transferable skills with examples.</p>
+  <div class="grid2">
+    <div>
+      <div class="skillgroup"><h4>Programming</h4><div class="tags"><span class="tag">Java</span><span class="tag">Python</span><span class="tag">C</span><span class="tag">C++</span><span class="tag">HTML/CSS</span><span class="tag">Bash</span></div></div>
+      <div class="skillgroup"><h4>Data &amp; AI</h4><div class="tags"><span class="tag">Data preparation</span><span class="tag">ML fundamentals</span><span class="tag">Survey analysis</span><span class="tag">AI integration</span></div></div>
+      <div class="skillgroup"><h4>Tools</h4><div class="tags"><span class="tag">Git &amp; GitHub</span><span class="tag">Linux</span><span class="tag">VS Code</span><span class="tag">Cisco Packet Tracer</span></div></div>
+      <h4 style="font:600 15px var(--head);margin:18px 0 0">Code sample: C hash table</h4>
+<pre><span class="c">/* From register_user(): update an existing user, or insert a new one */</span>
+int bucketIndex = get_bucket_for_user(user_id);
+if (bucketIndex == -1) return ERROR;            <span class="c">// invalid user id</span>
+
+User *current = ht-&gt;buckets[bucketIndex];
+while (current != NULL) {                       <span class="c">// walk the chain</span>
+    if (current-&gt;user_id == user_id) {
+        strcpy(current-&gt;password, password);    <span class="c">// existing user: update</span>
+        return SUCCESS;
+    }
+    current = current-&gt;next;
+}
+
+User *newUser = (User *) malloc(sizeof(User));
+if (newUser == NULL) return ERROR;             <span class="c">// allocation failed</span>
+newUser-&gt;user_id = user_id;
+strcpy(newUser-&gt;password, password);
+newUser-&gt;next = ht-&gt;buckets[bucketIndex];        <span class="c">// insert at head of list</span>
+ht-&gt;buckets[bucketIndex] = newUser;
+return SUCCESS;</pre>
+      <p style="color:var(--muted);font-size:14px;margin-top:8px">Full code: <a href="https://github.com/alexanmateosyan">GitHub</a></p>
+    </div>
+    <div>
+      <ul class="ts">
+        <li><b>Communication</b><span>I write, record and publish my own podcast, Dragon's Gate, and presented my research findings to a non-technical audience.</span></li>
+        <li><b>Teamwork</b><span>Built a website in a team of five through GitHub, and worked alongside organisers as a volunteer at the Sigma Squared Summit in Vienna.</span></li>
+        <li><b>Self-motivation &amp; organisation</b><span>Took on a demanding internship abroad, and plan podcast episodes and a fitness routine around my studies.</span></li>
+        <li><b>Adaptability</b><span>Moved from Java to C/C++ and from university work to a real production AI system.</span></li>
+      </ul>
+    </div>
+  </div>
+</div></section>
+
+<section id="cv"><div class="wrap">
+  <h2>CV</h2>
+  <div class="cvbox">
+    <div><b style="font-family:var(--head);font-size:18px">My CV</b><br><span style="color:var(--muted)">Tailored for data &amp; technology internships. PDF, 1 page.</span></div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn primary" href="Alex_Mateosyan_CV.pdf" download>Download CV</a><a class="btn ghost" href="Royal_London_Job_Advert.pdf" target="_blank">Job advert (appendix)</a></div>
+  </div>
+</div></section>
+
+<section id="contact"><div class="wrap">
+  <h2>Find me online</h2>
+  <p class="sub">Happy to chat about data, AI, or internship opportunities.</p>
+  <div class="links">
+    <a href="https://www.linkedin.com/in/alexan-mateosyan-850789446">LinkedIn<span>Experience &amp; certificates</span></a>
+    <a href="https://github.com/alexanmateosyan">GitHub<span>Code &amp; projects</span></a>
+    <a href="https://open.spotify.com/show/YOUR-SHOW-ID">Dragon's Gate<span>My podcast on Spotify</span></a>
+    <a href="mailto:alexanmateosyan@gmail.com">Email<span>alexanmateosyan@gmail.com</span></a>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  © 2026 Alex Mateosyan. AI acknowledgement: I used Claude (Anthropic) to help draft wording and the layout of this site and my CV. All content was reviewed, edited and checked by me.
+</div></footer>
+
+</body>
+</html>
